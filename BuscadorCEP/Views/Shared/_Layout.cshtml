@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - BuscadorCEP</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.min.css" />
+    </head>
+    <body>
+        <div class="container">
+            <a style="padding:5px">BuscadorCEP</a>
+            <a href="@Url.Action("Address", "Home")" style="padding:5px">Buscar Endereço</a>
+            <a href="@Url.Action("CEP", "Home")" style="padding:5px">Buscar CEP</a>
+            <hr />
+        </div>
+        <main class="container">
+            @RenderBody()
+        </main>
+        <footer class="container">
+            <div class="row">
+                <hr />
+                @DateTime.Now.Year.ToString() - BuscadorCEP
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

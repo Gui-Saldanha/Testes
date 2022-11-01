@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1>Bem Vindo ao BuscadorCEP!</h1>
+
+    <div class="row">
+        <div class="col">
+            O aplicativo BuscadorCEP! permite que você encontre códigos de endereçamento postais(CEP).
+            Se você já tiver o CEP em mãos e gostaria de buscar seu endereço, o BuscadorCEP! também vai te ajudar.
+            Aproveite =D
+        </div>
+    </div>
+
+    <div style="display:flex">
+        <div class="col1">
+            <button type="submit" class="btn btn-success" style="margin:5px;" asp-action="Address">Buscar Endereço</button>
+        </div>
+        <div class="col1">
+            <button type="submit" class="btn btn-success" style="margin:5px;" asp-action="CEP">Buscar CEP</button>
+        </div>
+    </div>
+</div>

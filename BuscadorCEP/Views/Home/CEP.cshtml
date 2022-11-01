@@ -1,0 +1,68 @@
+﻿@model Model.AddressCEP;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="font-weight: 300;padding-left: 5px;margin-bottom: 0px;font-size:18px;">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Início</a></li>
+            <li onclick="VoltarParaTitulo()" class="breadcrumb-item active" aria-current="page">Titulo</li>
+            @if (string.IsNullOrEmpty(Model.SubTitulo))
+            {
+                <li class="breadcrumb-item active" aria-current="page">SubTitulo</li>
+            }
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Logradouro</label>
+            <input id="logradouro" asp-for="Logradouro" class="form-control invisible" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Município/UF</label>
+            <input id="municipio" asp-for="Municipio" class="form-control invisible" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Bairro</label>
+            <input id="bairro" asp-for="Bairro" class="form-control invisible" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label class="form-label">CEP</label>
+            <input asp-for="CEP" class="form-control" />
+        </div>
+    </div>
+
+    <div style="display:flex">
+        <div class="col">
+            <button class="btn btn btn-success" style="margin:5px;" id="btn1" asp-action="Index">Voltar</button>
+        </div>
+        <div class="col">
+            <button class="btn btn btn-success" style="margin:5px;" id="btn2" asp-action="Buscar">Buscar</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function VoltarParaTitulo() {
+        if(!@string.IsNullOrEmpty(Model.SubTitulo))
+        {
+            $('#btn1').val('Nova Busca');
+            $('#btn2').val('Imprimir');
+
+            $('#logradouro').show();
+            $('#municipio').show();
+            $('#bairro').show();
+        }
+    }
+</script>
